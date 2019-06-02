@@ -1,0 +1,23 @@
+<mat-progress-bar *ngIf="loading" color="accent" mode="indeterminate" ></mat-progress-bar>
+
+<div *ngIf="banner" fxLayout="row" style="height: 250px;">
+    <img fxFlex src="{{ banner }}" />
+</div>
+
+<div fxLayout="row" fxLayoutAlign="center">
+    <div fxLayout="column" style="text-align: center">
+        <h1>Workshop2</h1>
+        this is second workshop!
+    </div>
+</div>
+
+<div *ngIf="!loading" fxLayout="row" fxLayoutAlign="center" fxLayout.xs="column" >
+    <div fxFlex="33" fxFlex.xs="100" *ngFor="let item of items">
+        <div fxFlex fxLayout="column" style="text-align: center" >
+            <img fxFlex src="{{ item.image }}" />
+            <h4 fxFlex>
+                <a routerLink="/list/{{ item.id }}">{{ item.title }}</a>
+            </h4>
+        </div>
+    </div>
+</div>
